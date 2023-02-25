@@ -87,11 +87,11 @@ AutoTp:Cheat(
 )
 
 Autofarm:Cheat("Slider", "Farm Time", function(farmtime)
-	local farmtime1 = farmtime
+    farmtime1 = farmtime
 end, {min = 1, max = 180, suffix = " min"})
 
 Autofarm:Cheat("Slider", "Convert Time", function(converttime)
-	local converttime1 = converttime
+    converttime1 = converttime
 end, {min = 1, max = 60, suffix = " min"})
 
 Autofarm:Cheat(
