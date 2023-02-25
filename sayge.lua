@@ -22,7 +22,7 @@ AutoTp:Cheat(
         while State == true do
             while task.wait(1) do
                 for _, Object in next, Parts:GetChildren() do
-                    if Object.Name == "Bone" then
+                    if Object.Name == "Bone" or "Coin" then
                         Object.CFrame = HumRoot.CFrame
                     end
                 end
