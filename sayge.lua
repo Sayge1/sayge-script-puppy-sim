@@ -21,11 +21,11 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State == true do
-            if State == false then
-                break
-            end 
             task.wait(1)
             for _, Object in next, Parts:GetChildren() do
+                if State == false then
+                    break
+                end    
                 if Object.Name == "Bone" then
                     Object.CFrame = HumRoot.CFrame
                 end
@@ -48,13 +48,12 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State1 == true do
-	        if State1 == false then
-                break
-            end 
             task.wait(1)		
            
             for _, Object in next, Parts:GetChildren() do
-		
+                if State1 == false then
+                    break
+                end    
                 if Object.Name == "Blue Yummy" or Object.Name == "Gold Yummy" or Object.Name == "Bomb" or Object.Name == "Hasty" or Object.Name == "Lucky Break" or Object.Name == "Dinamite" or Object.Name == "Gold Bomb" or Object.Name == "Blue Bomb" or Object.Name == "Magic Carrot" or Object.Name == "Triple Jump" or Object.Name == "Linking Beam" or Object.Name == "Bones Pumpkin" or Object.Name == "Rage" then
                     Object.CFrame = HumRoot.CFrame
                 end
@@ -78,12 +77,12 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State2 == true do
-	        if State2 == false then
-                break
-            end 
             task.wait(1)		
              
             for _, Object in next, Parts:GetChildren() do
+                if State2 == false then
+                    break
+                end    
                 if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
                     Object.CFrame = HumRoot.CFrame
                 end
