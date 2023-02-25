@@ -85,21 +85,13 @@ AutoTp:Cheat(
 	end    
 )
 
-Autofarm:Cheat("Slider", "Farm Time", function(farmtime)
-	print("Silder value changed:", farmtime)
-end, {min = 1, max = 180, suffix = " min"})
-
-Autofarm:Cheat("Slider", "Convert Time", function(converttime)
-	print("Silder value changed:", converttime)
-end, {min = 1, max = 60, suffix = " min"})
-
 Autofarm:Cheat(
 	"Checkbox", -- Type
 	"Autoconvert", -- Name
 	function(State3) -- Callback function
 	
         while State3 == true do
-	    wait(1)		
+	    wait(1)					
             local Players = game.Players
             local Player = Players.LocalPlayer
 
@@ -119,3 +111,11 @@ Autofarm:Cheat(
 	end			
 	end    
 )
+
+Autofarm:Cheat("Slider", "Farm Time", function(farmtime)
+	print("Silder value changed:", farmtime)
+end, {min = 1, max = 180, suffix = " min"})
+
+Autofarm:Cheat("Slider", "Convert Time", function(converttime)
+	print("Silder value changed:", converttime)
+end, {min = 1, max = 60, suffix = " min"})
