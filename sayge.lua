@@ -99,25 +99,24 @@ Autofarm:Cheat(
 	"Checkbox", -- Type
 	"Autoconvert", -- Name
 	function(State3) -- Callback function
-	local Players = game.Players
-        local Player = Players.LocalPlayer
+	
+        while 3 do
+            local Players = game.Players
+            local Player = Players.LocalPlayer
 
-        local Character = Player.Character or Player.CharacterAdded:Wait()
-        local HumRoot = Character:WaitForChild("HumanoidRootPart")
-        while State3 == true do
+            local Character = Player.Character or Player.CharacterAdded:Wait()
+            local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
             oldcframe = HumRoot.CFrame
-            wait(farmtime * 60)
+            wait(1)
             HumRoot.CFrame = game:GetService("Workspace").Map["Loc 1"].BoneConverter.ConvertMachine.Cylinder.Border1.CFrame
             wait(5)
             local A_1 = "On"
             local Event = game:GetService("ReplicatedStorage").Remotes.Player.UseConvertMachine
             Event:InvokeServer(A_1)
-            wait(converttime)
+            wait(1)
             HumRoot.CFrame = oldcframe
-            if State3 == false then
-				break
-            end
-        end
-					
+
+	end			
 	end    
 )
