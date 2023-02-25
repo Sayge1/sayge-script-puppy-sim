@@ -95,7 +95,7 @@ Autofarm:Cheat(
 	"Autoconvert", -- Name
 	function(State3) -- Callback function
 	
-        while State3 = true do
+        while State3 == true do
 	    wait(1)		
             local Players = game.Players
             local Player = Players.LocalPlayer
