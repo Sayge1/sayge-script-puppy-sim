@@ -20,7 +20,7 @@ AutoTp:Cheat(
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
         local Parts = game.Workspace.Tokens.Local
-        while State ~= false do
+        while State == true do
             task.wait(1)
             for _, Object in next, Parts:GetChildren() do
                 if Object.Name == "Bone" then
@@ -44,7 +44,7 @@ AutoTp:Cheat(
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
         local Parts = game.Workspace.Tokens.Local
-        while State1 ~= false do
+        while State1 == true do
 	    task.wait(1)		
             
             for _, Object in next, Parts:GetChildren() do
@@ -71,7 +71,7 @@ AutoTp:Cheat(
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
         local Parts = game.Workspace.Tokens.Local
-        while State2 ~= false do
+        while State2 == true do
 	        task.wait(1)		
 
             for _, Object in next, Parts:GetChildren() do
@@ -99,7 +99,7 @@ Autofarm:Cheat(
 	"Autoconvert", -- Name
 	function(State3) -- Callback function
 	
-        while State3 ~= false do
+        while State3 == true do
 			
 	        task.wait(1)
 			
