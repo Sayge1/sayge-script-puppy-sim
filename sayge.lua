@@ -38,7 +38,7 @@ AutoTp:Cheat(
 	"Checkbox", -- Type
 	"Auto Abilities", -- Name
 	function(State1) -- Callback function
-		turnautoabilities = State2
+		turnautoabilities = State1
 		local Players = game.Players
         local Player = Players.LocalPlayer
 
