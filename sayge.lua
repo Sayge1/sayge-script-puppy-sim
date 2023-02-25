@@ -48,7 +48,7 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State1 == true do
-	        if State3 == false then
+	        if State1 == false then
                 break
             end 
             task.wait(1)		
@@ -78,7 +78,7 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State2 == true do
-	        if State3 == false then
+	        if State2 == false then
                 break
             end 
             task.wait(1)		
