@@ -21,6 +21,9 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State == true do
+            if State == false then
+                break
+            end 
             task.wait(1)
             for _, Object in next, Parts:GetChildren() do
                 if Object.Name == "Bone" then
@@ -45,8 +48,11 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State1 == true do
-	    task.wait(1)		
-            
+	        if State3 == false then
+                break
+            end 
+            task.wait(1)		
+           
             for _, Object in next, Parts:GetChildren() do
 		
                 if Object.Name == "Blue Yummy" or Object.Name == "Gold Yummy" or Object.Name == "Bomb" or Object.Name == "Hasty" or Object.Name == "Lucky Break" or Object.Name == "Dinamite" or Object.Name == "Gold Bomb" or Object.Name == "Blue Bomb" or Object.Name == "Magic Carrot" or Object.Name == "Triple Jump" or Object.Name == "Linking Beam" or Object.Name == "Bones Pumpkin" or Object.Name == "Rage" then
@@ -54,7 +60,7 @@ AutoTp:Cheat(
                 end
             end
 
-		
+            
            
 	    end
 	end    
@@ -72,8 +78,11 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State2 == true do
-	        task.wait(1)		
-
+	        if State3 == false then
+                break
+            end 
+            task.wait(1)		
+             
             for _, Object in next, Parts:GetChildren() do
                 if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
                     Object.CFrame = HumRoot.CFrame
@@ -100,7 +109,9 @@ Autofarm:Cheat(
 	function(State3) -- Callback function
 	
         while State3 == true do
-			
+			if State3 == false then
+                break
+            end 
 	        task.wait(1)
 			
             local Players = game.Players
@@ -119,7 +130,7 @@ Autofarm:Cheat(
             Event:InvokeServer(A_1)
             task.wait(converttime1 * 60)
             HumRoot.CFrame = oldcframe
-
+             
 	    end			
 	end    
 )
