@@ -33,7 +33,7 @@ AutoTp:Cheat(
 
 Autofarm:Cheat(
 	"Checkbox", -- Type
-	"Auto Bones", -- Name
+	"Auto Abilities", -- Name
 	function(State) -- Callback function
 		local Players = game.Players
         local Player = Players.LocalPlayer
