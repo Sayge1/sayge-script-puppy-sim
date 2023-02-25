@@ -20,17 +20,15 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State == true do
-            while task.wait(1) do
-                for _, Object in next, Parts:GetChildren() do
-                    if Object.Name == "Bone" then
-                        Object.CFrame = HumRoot.CFrame
-                    end
+
+            for _, Object in next, Parts:GetChildren() do
+                if Object.Name == "Bone" then
+                    Object.CFrame = HumRoot.CFrame
                 end
-	    if State == false then
-				break
-            end			
             end
-	    end
+		
+
+	end
 	end    
 )
 
@@ -46,18 +44,16 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State1 == true do
-            while task.wait(1) do
-                for _, Object in next, Parts:GetChildren() do
-                    if Object.Name == "Blue Yummy" or Object.Name == "Gold Yummy" or Object.Name == "Bomb" or Object.Name == "Hasty" or Object.Name == "Lucky Break" or Object.Name == "Dinamite" or Object.Name == "Gold Bomb" or Object.Name == "Blue Bomb" or Object.Name == "Magic Carrot" or Object.Name == "Triple Jump" or Object.Name == "Linking Beam" or Object.Name == "Bones Pumpkin" or Object.Name == "Rage" then
-                        Object.CFrame = HumRoot.CFrame
-                    end
+            
+            for _, Object in next, Parts:GetChildren() do
+                if Object.Name == "Blue Yummy" or Object.Name == "Gold Yummy" or Object.Name == "Bomb" or Object.Name == "Hasty" or Object.Name == "Lucky Break" or Object.Name == "Dinamite" or Object.Name == "Gold Bomb" or Object.Name == "Blue Bomb" or Object.Name == "Magic Carrot" or Object.Name == "Triple Jump" or Object.Name == "Linking Beam" or Object.Name == "Bones Pumpkin" or Object.Name == "Rage" then
+                    Object.CFrame = HumRoot.CFrame
                 end
-	    if State1 == false then
-					
-				break
-            end			
             end
-	    end
+
+		
+           
+	end
 	end    
 )
 
@@ -73,17 +69,16 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State2 == true do
-            while task.wait(1) do
-                for _, Object in next, Parts:GetChildren() do
-                    if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
-                        Object.CFrame = HumRoot.CFrame
-                    end
+
+            for _, Object in next, Parts:GetChildren() do
+                if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
+                    Object.CFrame = HumRoot.CFrame
                 end
-	    if State2 == false then
-				break
-            end			
             end
-	    end
+
+		
+
+	end
 	end    
 )
 
@@ -101,6 +96,7 @@ Autofarm:Cheat(
 	function(State3) -- Callback function
 	
         while State3 = true do
+	    wait(1)		
             local Players = game.Players
             local Player = Players.LocalPlayer
 
@@ -108,13 +104,13 @@ Autofarm:Cheat(
             local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
             oldcframe = HumRoot.CFrame
-            wait(farmtime * 60)
+            wait(farmtime*60)
             HumRoot.CFrame = game:GetService("Workspace").Map["Loc 1"].BoneConverter.ConvertMachine.Cylinder.Border1.CFrame
             wait(5)
             local A_1 = "On"
             local Event = game:GetService("ReplicatedStorage").Remotes.Player.UseConvertMachine
             Event:InvokeServer(A_1)
-            wait(converttime * 60)
+            wait(converttime*60)
             HumRoot.CFrame = oldcframe
 
 	end			
