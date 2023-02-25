@@ -53,3 +53,26 @@ AutoTp:Cheat(
 	    end
 	end    
 )
+
+AutoTp:Cheat(
+	"Checkbox", -- Type
+	"Auto Fruits", -- Name
+	function(State2) -- Callback function
+		local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
+        local Parts = game.Workspace.Tokens.Local
+        while State2 == true do
+            while task.wait(1) do
+                for _, Object in next, Parts:GetChildren() do
+                    if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
+                        Object.CFrame = HumRoot.CFrame
+                    end
+                end
+            end
+	    end
+	end    
+)
