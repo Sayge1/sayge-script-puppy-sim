@@ -20,7 +20,7 @@ AutoTp:Cheat(
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
         local Parts = game.Workspace.Tokens.Local
-        while State == true do
+        while State ~= false do
             task.wait(1)
             for _, Object in next, Parts:GetChildren() do
                 if Object.Name == "Bone" then
@@ -44,7 +44,7 @@ AutoTp:Cheat(
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
         local Parts = game.Workspace.Tokens.Local
-        while State1 == true do
+        while State1 ~= false do
 	    task.wait(1)		
             
             for _, Object in next, Parts:GetChildren() do
@@ -71,7 +71,7 @@ AutoTp:Cheat(
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
         local Parts = game.Workspace.Tokens.Local
-        while State2 == true do
+        while State2 ~= false do
 	        task.wait(1)		
 
             for _, Object in next, Parts:GetChildren() do
@@ -87,11 +87,11 @@ AutoTp:Cheat(
 )
 
 Autofarm:Cheat("Slider", "Farm Time", function(farmtime)
-	print("Silder value changed:", farmtime)
+	local farmtime1 = farmtime
 end, {min = 1, max = 180, suffix = " min"})
 
 Autofarm:Cheat("Slider", "Convert Time", function(converttime)
-	print("Silder value changed:", converttime)
+	local converttime1 = converttime
 end, {min = 1, max = 60, suffix = " min"})
 
 Autofarm:Cheat(
@@ -99,7 +99,7 @@ Autofarm:Cheat(
 	"Autoconvert", -- Name
 	function(State3) -- Callback function
 	
-        while State3 == true do
+        while State3 ~= false do
 			
 	        task.wait(1)
 			
@@ -110,14 +110,14 @@ Autofarm:Cheat(
             local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
             oldcframe = HumRoot.CFrame
-            task.wait(tonumber(farmtime) * 60)
+            task.wait(farmtime * 60)
 			print(farmtime, converttime)
             HumRoot.CFrame = game:GetService("Workspace").Map["Loc 1"].BoneConverter.ConvertMachine.Cylinder.Border1.CFrame
             task.wait(5)
             local A_1 = "On"
             local Event = game:GetService("ReplicatedStorage").Remotes.Player.UseConvertMachine
             Event:InvokeServer(A_1)
-            task.wait(tonumber(converttime)*60)
+            task.wait(converttime * 60)
             HumRoot.CFrame = oldcframe
 
 	    end			
