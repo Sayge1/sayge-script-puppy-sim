@@ -1,5 +1,5 @@
 local Finity = loadstring(game:HttpGet("https://raw.githubusercontent.com/teppyboy/RbxScripts/master/Misc/UI_Libraries/Finity/Library.lua"))()
-local FinityWindow = Finity.new(true)
+local FinityWindow = Finity.new(true, "Lumus")
 FinityWindow.ChangeToggleKey(Enum.KeyCode.Z)
 local AutofarmCategory = FinityWindow:Category("Autofarm")
 local MiscCategory = FinityWindow:Category("Misc")
