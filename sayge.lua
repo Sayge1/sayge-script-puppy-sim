@@ -26,7 +26,7 @@ AutoTp:Cheat(
                         Object.CFrame = HumRoot.CFrame
                     end
                 end
-	if State == false then
+	    if State == false then
 				break
             end			
             end
@@ -52,7 +52,8 @@ AutoTp:Cheat(
                         Object.CFrame = HumRoot.CFrame
                     end
                 end
-	if State1 == false then
+	    if State1 == false then
+					
 				break
             end			
             end
@@ -78,7 +79,7 @@ AutoTp:Cheat(
                         Object.CFrame = HumRoot.CFrame
                     end
                 end
-	if State2 == false then
+	    if State2 == false then
 				break
             end			
             end
