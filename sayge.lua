@@ -28,7 +28,7 @@ AutoTp:Cheat(
             end
 		
 
-	end
+	    end
 	end    
 )
 
@@ -55,7 +55,7 @@ AutoTp:Cheat(
 
 		
            
-	end
+	    end
 	end    
 )
 
@@ -71,7 +71,7 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while State2 == true do
-	    task.wait(1)		
+	        task.wait(1)		
 
             for _, Object in next, Parts:GetChildren() do
                 if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
@@ -81,7 +81,7 @@ AutoTp:Cheat(
 
 		
 
-	end
+	    end
 	end    
 )
 
@@ -91,7 +91,9 @@ Autofarm:Cheat(
 	function(State3) -- Callback function
 	
         while State3 == true do
-	    wait(1)					
+			
+	        task.wait(1)
+			print(farmtime, converttime)
             local Players = game.Players
             local Player = Players.LocalPlayer
 
@@ -108,7 +110,7 @@ Autofarm:Cheat(
             task.wait(converttime*60)
             HumRoot.CFrame = oldcframe
 
-	end			
+	    end			
 	end    
 )
 
