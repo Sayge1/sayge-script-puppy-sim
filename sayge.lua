@@ -12,6 +12,7 @@ AutoTp:Cheat(
 	"Checkbox", -- Type
 	"Auto Bones", -- Name
 	function(State) -- Callback function
+		print(State)
 	    local Players = game.Players
         local Player = Players.LocalPlayer
 
