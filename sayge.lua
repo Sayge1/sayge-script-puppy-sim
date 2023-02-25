@@ -86,6 +86,14 @@ AutoTp:Cheat(
 	end    
 )
 
+Autofarm:Cheat("Slider", "Farm Time", function(farmtime)
+	print("Silder value changed:", farmtime)
+end, {min = 1, max = 180, suffix = " min"})
+
+Autofarm:Cheat("Slider", "Convert Time", function(converttime)
+	print("Silder value changed:", converttime)
+end, {min = 1, max = 60, suffix = " min"})
+
 Autofarm:Cheat(
 	"Checkbox", -- Type
 	"Autoconvert", -- Name
@@ -94,7 +102,7 @@ Autofarm:Cheat(
         while State3 == true do
 			
 	        task.wait(1)
-			print(farmtime, converttime)
+			
             local Players = game.Players
             local Player = Players.LocalPlayer
 
@@ -102,23 +110,18 @@ Autofarm:Cheat(
             local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
             oldcframe = HumRoot.CFrame
-            task.wait(farmtime*60)
+            task.wait(tonumber(farmtime) * 60)
+			print(farmtime, converttime)
             HumRoot.CFrame = game:GetService("Workspace").Map["Loc 1"].BoneConverter.ConvertMachine.Cylinder.Border1.CFrame
             task.wait(5)
             local A_1 = "On"
             local Event = game:GetService("ReplicatedStorage").Remotes.Player.UseConvertMachine
             Event:InvokeServer(A_1)
-            task.wait(converttime*60)
+            task.wait(tonumber(converttime)*60)
             HumRoot.CFrame = oldcframe
 
 	    end			
 	end    
 )
 
-Autofarm:Cheat("Slider", "Farm Time", function(farmtime)
-	print("Silder value changed:", farmtime)
-end, {min = 1, max = 180, suffix = " min"})
 
-Autofarm:Cheat("Slider", "Convert Time", function(converttime)
-	print("Silder value changed:", converttime)
-end, {min = 1, max = 60, suffix = " min"})
