@@ -103,20 +103,15 @@ Autofarm:Cheat(
 	"Autoconvert", -- Name
 	function(State3) -- Callback function
 		turnautoconvert = State3
+		local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+		oldcframe = HumRoot.CFrame
         while turnautoconvert do
-
-	        task.wait(1)
-			
-            local Players = game.Players
-            local Player = Players.LocalPlayer
-
-            local Character = Player.Character or Player.CharacterAdded:Wait()
-            local HumRoot = Character:WaitForChild("HumanoidRootPart")
-
-            oldcframe = HumRoot.CFrame
             task.wait(farmtime1 * 60)
-			print(farmtime, converttime)
-            HumRoot.CFrame = game:GetService("Workspace").Map["Loc 1"].BoneConverter.ConvertMachine.Cylinder.Border1.CFrame
+			HumRoot.CFrame = game:GetService("Workspace").Map["Loc 1"].BoneConverter.ConvertMachine.Cylinder.Border1.CFrame
             task.wait(5)
             local A_1 = "On"
             local Event = game:GetService("ReplicatedStorage").Remotes.Player.UseConvertMachine
