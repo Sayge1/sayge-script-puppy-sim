@@ -187,8 +187,8 @@ end, {min = 1, max = 100, suffix = " jump"})
 AutoTp:Cheat(
 	"Checkbox", -- Type
 	"мб работает", -- Name
-	function(State) -- Callback function
-		turnautobones = State
+	function(State7) -- Callback function
+		turnautocollectall = State7
 	    local Players = game.Players
         local Player = Players.LocalPlayer
 
@@ -196,8 +196,8 @@ AutoTp:Cheat(
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
         local Parts = game.Workspace.Tokens.Local
-        while turnautobones do
-            task.wait(1)
+        while turnautocollectall do
+            task.wait(5)
             for _, Object in next, Parts:GetChildren() do
   
                 if Object.Name == "Bone" or "Coin" then
