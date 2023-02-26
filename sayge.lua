@@ -213,3 +213,29 @@ AutoTp:Cheat(
 AutoTp:Cheat("Slider", "кд СБОРА ВСЕГО", function(sborvsego)
    sborvsego1 = sborvsego
 end, {min = 1, max = 10, suffix = " sec"})
+
+AutoTp:Cheat(
+	"Checkbox", -- Type
+	"Auto Chest", -- Name
+	function(State8) -- Callback function
+		turnautochest = State8
+	    local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
+        local Parts = game.Workspace.Fields.Field4.Mud
+        while turnautochest do
+            task.wait(10)
+            for _, Object in next, Parts:GetChildren() do
+  
+                if Object.Name == "Mud" then
+                    HumRoot.CFrame = Object.CFrame
+                end
+            end
+		
+
+	    end
+	end    
+)
