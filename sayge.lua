@@ -143,6 +143,23 @@ PlayerStats:Cheat(
 
 PlayerStats:Cheat(
 	"Checkbox", -- Type
+	"WalkSpeed(for farms, maybe more lags)", -- Name
+	function(State6) -- Callback function
+      local Players = game.Players
+      local Player = Players.LocalPlayer
+
+      local Character = Player.Character or Player.CharacterAdded:Wait()
+      
+      turnspeed1 = State6
+      while turnspeed1 do
+         task.wait(0.1)
+         Character.Humanoid.WalkSpeed = Speed1
+      end       
+	end
+)
+
+PlayerStats:Cheat(
+	"Checkbox", -- Type
 	"JumpPower", -- Name
 	function(State5) -- Callback function
 		local Players = game.Players
