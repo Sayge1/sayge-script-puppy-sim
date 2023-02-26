@@ -197,7 +197,7 @@ AutoTp:Cheat(
 
         local Parts = game.Workspace.Tokens.Local
         while turnautocollectall do
-            task.wait(5)
+            task.wait(sborvsego1)
             for _, Object in next, Parts:GetChildren() do
   
                 if Object.Name == "Bone" or "Coin" then
@@ -209,3 +209,7 @@ AutoTp:Cheat(
 	    end
 	end    
 )
+
+AutoTp:Cheat("Slider", "кд СБОРА ВСЕГО", function(sborvsego)
+   sborvsego1 = sborvsego
+end, {min = 1, max = 10, suffix = " sec"})
