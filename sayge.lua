@@ -186,7 +186,7 @@ end, {min = 1, max = 100, suffix = " jump"})
 
 AutoTp:Cheat(
 	"Checkbox", -- Type
-	"мб работает", -- Name
+	"СБОР ВСЕГО", -- Name
 	function(State7) -- Callback function
 		turnautocollectall = State7
 	    local Players = game.Players
