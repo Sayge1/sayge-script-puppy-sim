@@ -231,7 +231,7 @@ AutoTp:Cheat(
             for _, Object in next, Parts:GetChildren() do
   
                 if Object.Name == "Mud" then
-                    HumRoot.CFrame = Object.CFrame
+                    HumRoot.CFrame = Object.Mud.CFrame
                 end
             end
 		
