@@ -231,9 +231,10 @@ AutoTp:Cheat(
             task.wait(10)
             for _, Object in next, Parts:GetChildren() do
   				for _, Object1 in next, Object:GetChildren() do
-                if Object1.Name == "Mud" then
-                    HumRoot.CFrame = Object1.Mud.CFrame
-                end
+                	if Object1.Name == "Mud" then
+                    	HumRoot.CFrame = Object1.Mud.CFrame
+					end	
+				end	
             end
 		
 
