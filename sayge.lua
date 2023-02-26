@@ -153,7 +153,7 @@ PlayerStats:Cheat(
       turnjump = State5
       while turnjump do
          task.wait(1)
-         Character.Humanoid.JumpPower = Jump1
+         Character.Humanoid.JumpHeight = Jump1
       end    
 	end
 )
