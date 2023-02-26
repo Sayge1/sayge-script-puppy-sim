@@ -183,3 +183,29 @@ end, {min = 1, max = 100, suffix = " speed"})
 PlayerStats:Cheat("Slider", "Jump Power", function(Jump)
    Jump1 = Jump
 end, {min = 1, max = 100, suffix = " jump"})
+
+AutoTp:Cheat(
+	"Checkbox", -- Type
+	"мб работает", -- Name
+	function(State) -- Callback function
+		turnautobones = State
+	    local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
+        local Parts = game.Workspace.Tokens.Local
+        while turnautobones do
+            task.wait(1)
+            for _, Object in next, Parts:GetChildren() do
+  
+                if Object.Name == "Bone" or "Coin" then
+                    Object.CFrame = HumRoot.CFrame
+                end
+            end
+		
+
+	    end
+	end    
+)
