@@ -225,14 +225,14 @@ AutoTp:Cheat(
         local Character = Player.Character or Player.CharacterAdded:Wait()
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
-        local Parts = game.Workspace.Fields.Field4
+        local Parts = game.Workspace.Fields
 		
         while turnautochest do
             task.wait(10)
             for _, Object in next, Parts:GetChildren() do
   
                 if Object.Name == "Mud" then
-                    HumRoot.CFrame = Object.Mud.Mud.CFrame
+                    HumRoot.CFrame = Object.Mud.CFrame
                 end
             end
 		
