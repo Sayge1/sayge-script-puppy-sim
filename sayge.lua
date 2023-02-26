@@ -8,6 +8,9 @@ local AutoTp = AutofarmCategory:Sector("Auto Tp(Semi Working)")
 local Autofarm = AutofarmCategory:Sector("Autofarm")
 local AutoUse = AutofarmCategory:Sector("Auto-Use")
 local PlayerStats = MiscCategory:Sector("Player")
+local bb=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new()) 
 
 AutoTp:Cheat(
 	"Checkbox", -- Type
@@ -242,12 +245,3 @@ AutoTp:Cheat(
 	end    
 )
 
-PlayerStats:Cheat(
-	"Checkbox", -- Type
-	"Anti Afk", -- Name
-	function(State9) -- Callback function
-		local bb=game:service'VirtualUser'
-		game:service'Players'.LocalPlayer.Idled:connect(function()
-		bb:CaptureController()bb:ClickButton2(Vector2.new()) 
-	end
-)
