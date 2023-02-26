@@ -230,9 +230,9 @@ AutoTp:Cheat(
         while turnautochest do
             task.wait(10)
             for _, Object in next, Parts:GetChildren() do
-  
-                if Object.Name == "Mud" then
-                    HumRoot.CFrame = Object.Mud.CFrame
+  				for k, Object1 in next, Object:GetChildren() do
+                if Object1.Name == "Mud" then
+                    HumRoot.CFrame = Object1.Mud.CFrame
                 end
             end
 		
