@@ -7,6 +7,7 @@ local MiscCategory = FinityWindow:Category("Misc")
 local AutoTp = AutofarmCategory:Sector("Auto Tp(Semi Working)")
 local Autofarm = AutofarmCategory:Sector("Autofarm")
 local AutoUse = AutofarmCategory:Sector("Auto-Use")
+local PlayerStats = MiscCategory:Sector("Player")
 
 AutoTp:Cheat(
 	"Checkbox", -- Type
@@ -123,4 +124,45 @@ Autofarm:Cheat(
 	end    
 )
 
+PlayerStats:Cheat(
+	"Checkbox", -- Type
+	"WalkSpeed", -- Name
+	function(State4) -- Callback function
+      local Players = game.Players
+      local Player = Players.LocalPlayer
 
+      local Character = Player.Character or Player.CharacterAdded:Wait()
+      
+      turnspeed = State4
+      while turnspeed do
+         task.wait(1)
+         Character.Humanoid.WalkSpeed = Speed1
+      end       
+	end
+)
+
+PlayerStats:Cheat(
+	"Checkbox", -- Type
+	"JumpPower", -- Name
+	function(State5) -- Callback function
+		local Players = game.Players
+      local Player = Players.LocalPlayer
+
+      local Character = Player.Character or Player.CharacterAdded:Wait()
+      
+      turnjump = State5
+      while turnjump do
+         task.wait(1)
+         Character.Humanoid.JumpPower = Jump1
+      end    
+	end
+)
+
+
+PlayerStats:Cheat("Slider", "Walk Speed", function(Speed)
+	Speed1 = Speed
+end, {min = 1, max = 100, suffix = " speed"})
+
+PlayerStats:Cheat("Slider", "Jump Power", function(Jump)
+   Jump1 = Jump
+end, {min = 1, max = 100, suffix = " jump"})
