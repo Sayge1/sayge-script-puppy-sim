@@ -264,7 +264,7 @@ Autofarm:Cheat(
         while turnautored do
             task.wait(0.5)
             for _, Object3 in next, Parts:GetChildren() do
-  				for b, Object2 in next, Object:GetChildren() do
+  				for b, Object2 in next, Object3:GetChildren() do
                 	if Object2.Name == "FlowerDecal" then
                     	HumRoot.CFrame = Object3.Ground.CFrame
 					end	
