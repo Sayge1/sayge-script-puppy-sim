@@ -248,3 +248,30 @@ AutoTp:Cheat(
 	end    
 )
 
+Autofarm:Cheat(
+	"Checkbox", -- Type
+	"Autofarm Red Flowers", -- Name
+	function(State9) -- Callback function
+		turnautored = State9
+	    local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
+        local Parts = game.Workspace.Fields.Field6.FieldBlocks
+		
+        while turnautored do
+            task.wait(0.5)
+            for _, Object3 in next, Parts:GetChildren() do
+  				for b, Object2 in next, Object:GetChildren() do
+                	if Object2.Name == "FlowerDecal" then
+                    	HumRoot.CFrame = Object3.Ground.CFrame
+					end	
+				end	
+            end
+		
+
+	    end
+	end    
+)
