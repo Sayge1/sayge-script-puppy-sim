@@ -259,7 +259,7 @@ Autofarm:Cheat(
         local Character = Player.Character or Player.CharacterAdded:Wait()
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
-        local Parts = game.Workspace.Fields.Field6.FieldBlocks
+        local Parts = game.Workspace.Fields.Field6
 		
         while turnautored do
             task.wait(0.5)
