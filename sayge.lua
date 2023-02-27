@@ -259,14 +259,14 @@ Autofarm:Cheat(
         local Character = Player.Character or Player.CharacterAdded:Wait()
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
-        local Parts = game.Workspace.Fields.Field6
+        local Parts = game.Workspace.Fields.Field6.FieldBlocks
 		
         while turnautored do
             task.wait(0.5)
             for _, Object3 in next, Parts:GetChildren() do
   				for b, Object2 in next, Object3:GetChildren() do
                 	if Object2.Name == "FlowerDecal" then
-                    	HumRoot.CFrame = Object3.CFrame
+                    	HumRoot.CFrame = Object2.CFrame
 					end	
 				end	
             end
