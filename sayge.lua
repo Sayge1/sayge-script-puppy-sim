@@ -275,3 +275,31 @@ Autofarm:Cheat(
 	    end
 	end    
 )
+
+Autofarm:Cheat(
+	"Checkbox", -- Type
+	"Autofarm Gun Boosts", -- Name
+	function(State10) -- Callback function
+		turnautogunboost = State10
+	    local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
+        local Parts = game.Workspace.Tokens.Local
+		
+        while turnautogunboost do
+			for _, Object in next, Parts:GetChildren() do
+  
+                if string.match(Object.Name, "GunBoost") then
+                    Object.CFrame = HumRoot.CFrame
+                end
+            end
+            
+        
+		
+
+	    end
+	end    
+)
