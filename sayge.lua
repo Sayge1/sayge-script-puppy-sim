@@ -290,6 +290,7 @@ Autofarm:Cheat(
         local Parts = game.Workspace.Tokens.Local
 		
         while turnautogunboost do
+                        task.wait(5)
 			for _, Object in next, Parts:GetChildren() do
   
                 if string.match(Object.Name, "GunBoost") then
