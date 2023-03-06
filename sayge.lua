@@ -287,7 +287,7 @@ Autofarm:Cheat(
         local Character = Player.Character or Player.CharacterAdded:Wait()
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
-        local Parts = game.Workspace.Tokens.Local
+        local Parts = game.Workspace
 		
         while turnautogunboost do
                         task.wait(5)
