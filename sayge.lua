@@ -304,3 +304,32 @@ Autofarm:Cheat(
 	    end
 	end    
 )
+
+Autofarm:Cheat(
+	"Checkbox", -- Type
+	"Autofarm Vase", -- Name
+	function(State11) -- Callback function
+		turnautovase = State11
+	    local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
+        local Parts = game.Workspace.Pots
+		
+        while turnautovase do
+                        task.wait(10)
+			for _, Object in next, Parts:GetChildren() do
+  
+                if string.match(Object.Name, "JP") then
+                    HumRoot.CFrame = Object.CFrame
+                end
+            end
+            
+        
+		
+
+	    end
+	end    
+)
