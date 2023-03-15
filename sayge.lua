@@ -32,7 +32,7 @@ AutoTp:Cheat(
             for _, Object in next, Parts:GetChildren() do
   
                 if Object.Name == "Bone" then
-                    Object.CFrame = HumRoot.CFrame
+                    HumRoot.CFrame = Object.CFrame
                 end
             end
 		
@@ -87,7 +87,7 @@ AutoTp:Cheat(
             for _, Object in next, Parts:GetChildren() do
 
                 if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
-                    Object.CFrame = HumRoot.CFrame
+                    HumRoot.CFrame = Object.CFrame
                 end
             end
 
@@ -207,7 +207,7 @@ AutoTp:Cheat(
             for _, Object in next, Parts:GetChildren() do
   
                 if Object.Name == "Bone" or "Coin" then
-                    Object.CFrame = HumRoot.CFrame
+                    HumRoot.CFrame = Object.CFrame
                 end
             end
 		
@@ -294,7 +294,7 @@ Autofarm:Cheat(
 			for _, Object in next, Parts:GetChildren() do
   
                 if string.match(Object.Name, "GunBoost") then
-                    Object.CFrame = HumRoot.CFrame
+                    HumRoot.CFrame = Object.CFrame
                 end
             end
             
