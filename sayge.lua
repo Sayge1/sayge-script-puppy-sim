@@ -344,24 +344,22 @@ Autofarm:Cheat(
 	"Autofarm vase1", -- Name
 	function(State13) -- Callback function
 		turnautovase = State13
-	    local Players = game.Players
-        local Player = Players.LocalPlayer
-        local Character = Player.Character or Player.CharacterAdded:Wait()
-        local HumRoot = Character:WaitForChild("HumanoidRootPart")
-        Parts = game.Workspace.Pots
-        while turnautovase do
-            task.wait(0.5)
-            for _, Object in next, Parts:GetChildren() do
-  				HumRoot.CFrame = Object.CFrame
-                fireclickdetector(Object.MainPart.ClickDetector)
-                repeat
-                    task.wait(0.5)
-                until Object.Parent == nil
-            end
-		
+		local Players = game.Players
+		local Player = Players.LocalPlayer
+		local Character = Player.Character or Player.CharacterAdded:Wait()
+		local HumRoot = Character:WaitForChild("HumanoidRootPart")
+		Parts = game.Workspace.Pots
+		while turnautovase do
+    		task.wait(0.5)
+			for _, Object in next, Parts:GetChildren() do
+  	    		HumRoot.CFrame = Object.MainPart.CFrame
+  	    		task.wait(1)
+  	    		fireclickdetector(Object.MainPart.ClickDetector)
+  	    		repeat
+  	        		task.wait(0.5)
+        		until Object.Parent == nil
+    		end    
+		end
 
-	    end
 	end    
 )
-
-
