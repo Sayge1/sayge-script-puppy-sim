@@ -338,32 +338,32 @@ Autofarm:Cheat(
 	end    
 )
 
+
 Autofarm:Cheat(
 	"Checkbox", -- Type
-	"Autofarm Vase", -- Name
-	function(State11) -- Callback function
-		turnautovase = State11
+	"Autofarm vase", -- Name
+	function(State13) -- Callback function
+		turnautovase = State13
 	    local Players = game.Players
         local Player = Players.LocalPlayer
-
         local Character = Player.Character or Player.CharacterAdded:Wait()
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
-
-        local Parts = game.Workspace.Pots
+        workspace = game:GetService("Workspace")
+        pots = workspace.Pots
 		
         while turnautovase do
-                        task.wait(10)
-			for _, Object in next, Parts:GetChildren() do
-  
-                if string.match(Object.Name, "JP") then
-                    HumRoot.CFrame = Object.CFrame
-                end
+            task.wait(0.5)
+            for _, Object in next, Parts:GetChildren() do
+  				HumRoot.CFrame = Object.CFrame
+                fireclickdetector(Object.MainPart.ClickDetector)
+                repeat
+                    task.wait(0.5)
+                until Object.Parent == nil
             end
-            
-        
 		
 
 	    end
 	end    
 )
+
 
