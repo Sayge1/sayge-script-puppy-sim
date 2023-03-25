@@ -296,7 +296,7 @@ Autofarm:Cheat(
                     for _2, Object2 in next, Object1:GetChildren() do
                         for _3, Object3 in next, Object2:GetChildren() do
                 	        if Object3.Name == "FlowerDecal" then
-                    	        HumRoot.CFrame = Object3.CFrame
+                    	        HumRoot.CFrame = Object2.CFrame
                             end
                         end        
                            
