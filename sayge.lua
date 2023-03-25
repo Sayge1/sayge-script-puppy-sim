@@ -348,12 +348,10 @@ Autofarm:Cheat(
         local Player = Players.LocalPlayer
         local Character = Player.Character or Player.CharacterAdded:Wait()
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
-        workspace = game:GetService("Workspace")
-        pots = workspace.Pots
-		
+        workspace = game.Workspace.Pots
         while turnautovase do
             task.wait(0.5)
-            for _, Object in next, pots:GetChildren() do
+            for _, Object in next, Parts:GetChildren() do
   				HumRoot.CFrame = Object.CFrame
                 fireclickdetector(Object.MainPart.ClickDetector)
                 repeat
