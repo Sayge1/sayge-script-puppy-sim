@@ -353,7 +353,7 @@ Autofarm:Cheat(
 		
         while turnautovase do
             task.wait(0.5)
-            for _, Object in next, Parts:GetChildren() do
+            for _, Object in next, pots:GetChildren() do
   				HumRoot.CFrame = Object.CFrame
                 fireclickdetector(Object.MainPart.ClickDetector)
                 repeat
