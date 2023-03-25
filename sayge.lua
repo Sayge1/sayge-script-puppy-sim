@@ -278,7 +278,7 @@ Autofarm:Cheat(
   
 Autofarm:Cheat(
 	"Checkbox", -- Type
-	"Autofarm Red Flowers(only daisy)", -- Name
+	"Autofarm all flowers", -- Name
 	function(Stateblya) -- Callback function
 		turnautoflowers = Stateblya
 	    local Players = game.Players
@@ -287,14 +287,14 @@ Autofarm:Cheat(
         local Character = Player.Character or Player.CharacterAdded:Wait()
         local HumRoot = Character:WaitForChild("HumanoidRootPart")
 
-        local Parts = game.Workspace.Fields.Field6.FieldBlocks
+        local Parts = game.Workspace.Fields
 		
         while turnautoflowers do
             task.wait(0.5)
             for _, Object in next, Parts:GetChildren() do
   				for _1, Object1 in next, Object:GetChildren() do
-                    for _2, Object2 in next, Parts:GetChildren() do
-                        for _3, Object3 in next, Parts:GetChildren() do
+                    for _2, Object2 in next, Object1:GetChildren() do
+                        for _3, Object3 in next, Object2:GetChildren() do
                 	        if Object3.Name == "FlowerDecal" then
                     	        HumRoot.CFrame = Object3.CFrame
                             end
