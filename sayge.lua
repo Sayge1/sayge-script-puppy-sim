@@ -59,7 +59,7 @@ AutoTp:Cheat(
             for _, Object in next, Parts:GetChildren() do
   
                 if Object.Name == "Blue Yummy" or Object.Name == "Gold Yummy" or Object.Name == "Bomb" or Object.Name == "Hasty" or Object.Name == "Lucky Break" or Object.Name == "Dinamite" or Object.Name == "Gold Bomb" or Object.Name == "Blue Bomb" or Object.Name == "Magic Carrot" or Object.Name == "Triple Jump" or Object.Name == "Linking Beam" or Object.Name == "Bones Pumpkin" or Object.Name == "Rage" then
-                    HumRoot.CFrame = Object.CFrame
+                    Object.CFrame = HumRoot.CFrame
                 end
             end
 
