@@ -27,6 +27,7 @@ AutoTp:Cheat(
 		local HumRoot = Character:WaitForChild("HumanoidRootPart")
 		workspace = game:GetService("Workspace")
 		local Parts = game.Workspace.Tokens.Local
+		local backlog = {}
 		while turnautobones do
     		Parts.ChildAdded:Connect(function(child)
         		if child.Name == "Bone" then
