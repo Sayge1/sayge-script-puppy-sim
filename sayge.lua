@@ -25,7 +25,7 @@ AutoTp:Cheat(
 		local Player = Players.LocalPlayer
 		local Character = Player.Character or Player.CharacterAdded:Wait()
 		local HumRoot = Character:WaitForChild("HumanoidRootPart")
-		workspace = game:GetService("Workspace")
+		local workspace = game:GetService("Workspace")
 		local Parts = game.Workspace.Tokens.Local
 		local backlog = {}
 		while turnautobones do
@@ -60,7 +60,7 @@ AutoTp:Cheat(
 		local Player = Players.LocalPlayer
 		local Character = Player.Character or Player.CharacterAdded:Wait()
 		local HumRoot = Character:WaitForChild("HumanoidRootPart")
-		workspace = game:GetService("Workspace")
+		local workspace = game:GetService("Workspace")
 		local Parts = game.Workspace.Tokens.Local
 		local backlog = {}
 		while turnautoabilities do
@@ -95,7 +95,7 @@ AutoTp:Cheat(
 		local Player = Players.LocalPlayer
 		local Character = Player.Character or Player.CharacterAdded:Wait()
 		local HumRoot = Character:WaitForChild("HumanoidRootPart")
-		workspace = game:GetService("Workspace")
+		local workspace = game:GetService("Workspace")
 		local Parts = game.Workspace.Tokens.Local
 		local backlog = {}
 		while turnautobones do
@@ -397,12 +397,47 @@ AutoTp:Cheat(
 		local Player = Players.LocalPlayer
 		local Character = Player.Character or Player.CharacterAdded:Wait()
 		local HumRoot = Character:WaitForChild("HumanoidRootPart")
-		workspace = game:GetService("Workspace")
+		local workspace = game:GetService("Workspace")
 		local Parts = game.Workspace.Tokens.Local
 		local backlog = {}
 		while turnautobones do
     		Parts.ChildAdded:Connect(function(child)
         		if child.Name == "Bone" or "Coin" then
+            		table.insert(backlog, child)
+        		end
+    		end)
+    		while true do
+        		local object = backlog[1]
+        		if not object then
+            		Parts.ChildAdded:Wait()
+            		continue
+        		end
+        		goal = {CFrame = object.CFrame}
+        		local tweeninfo = TweenInfo.new(0.1, Enum.EasingStyle.Sine,Enum.EasingDirection.Out, 0, false, 0)
+        		local tween = TweenService:Create(HumRoot, tweeninfo, goal)
+        		tween:Play()
+        		table.remove(backlog, 1)
+        	end
+		end
+	end
+)
+
+AutoTp:Cheat(
+	"Checkbox", -- Type
+	"auto bubbles", -- Name
+	function(State_bubbles) -- Callback function
+	turnautobubbles = State_bubbles
+	local TweenService = game:GetService("TweenService")
+		local Players = game.Players
+		local Player = Players.LocalPlayer
+		local Character = Player.Character or Player.CharacterAdded:Wait()
+		local HumRoot = Character:WaitForChild("HumanoidRootPart")
+		local workspace = game:GetService("Workspace")
+		local Parts = game.Workspace.Hits
+		local backlog = {}
+		while turnautobubbles do
+    		Parts.ChildAdded:Connect(function(child)
+        		if child.Name == "Bubble" then
             		table.insert(backlog, child)
         		end
     		end)
