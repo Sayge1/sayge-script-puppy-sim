@@ -20,35 +20,35 @@ AutoTp:Cheat(
 	"Auto Bones", -- Name
 	function(State) -- Callback function
 		turnautobones = State
-	local TweenService = game:GetService("TweenService")
-	local Players = game.Players
-	local Player = Players.LocalPlayer
-	local Character = Player.Character or Player.CharacterAdded:Wait()
-	local HumRoot = Character:WaitForChild("HumanoidRootPart")
-	workspace = game:GetService("Workspace")
-	local Parts = game.Workspace.Tokens.Local
-	while turnautobones do
-    	Parts.ChildAdded:Connect(function(child)
-        	if child.Name == "Bone" then
-            	table.insert(backlog, child)
-        	end
-    	end)
-    	while true do
-        	local object = backlog[1]
-        	if not object then
-            	Parts.ChildAdded:Wait()
-            	continue
-        	end
-        	goal = {CFrame = object.CFrame}
-        	local tweeninfo = TweenInfo.new(0.05, Enum.EasingStyle.Sine,Enum.EasingDirection.Out, 0, false, 0)
-        	local tween = TweenService:Create(HumRoot, tweeninfo, goal)
-        	tween:Play()
-        	table.remove(backlog, 1)
-        	repeat
-            	task.wait(0.01)
-        	until object.Parent == nil
-    	end
-	end    
+		local TweenService = game:GetService("TweenService")
+		local Players = game.Players
+		local Player = Players.LocalPlayer
+		local Character = Player.Character or Player.CharacterAdded:Wait()
+		local HumRoot = Character:WaitForChild("HumanoidRootPart")
+		workspace = game:GetService("Workspace")
+		local Parts = game.Workspace.Tokens.Local
+		while turnautobones do
+    		Parts.ChildAdded:Connect(function(child)
+        		if child.Name == "Bone" then
+            		table.insert(backlog, child)
+        		end
+    		end)
+    		while true do
+        		local object = backlog[1]
+        		if not object then
+            		Parts.ChildAdded:Wait()
+            		continue
+        		end
+        		goal = {CFrame = object.CFrame}
+        		local tweeninfo = TweenInfo.new(0.1, Enum.EasingStyle.Sine,Enum.EasingDirection.Out, 0, false, 0)
+        		local tween = TweenService:Create(HumRoot, tweeninfo, goal)
+        		tween:Play()
+        		table.remove(backlog, 1)
+        		repeat
+            		task.wait(0.01)
+        		until object.Parent == nil
+    		end
+		end    
 )
 
 AutoTp:Cheat(
