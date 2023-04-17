@@ -48,7 +48,8 @@ AutoTp:Cheat(
             		task.wait(0.01)
         		until object.Parent == nil
     		end
-		end    
+		end
+	end
 )
 
 AutoTp:Cheat(
