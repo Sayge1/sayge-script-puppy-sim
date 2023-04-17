@@ -100,7 +100,7 @@ AutoTp:Cheat(
 		local backlog = {}
 		while turnautobones do
     		Parts.ChildAdded:Connect(function(child)
-        		if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
+        		if child.Name == "Grape" or child.Name == "Melon" or child.Name == "Raspberry" or child.Name == "Rice" then
             		table.insert(backlog, child)
         		end
     		end)
@@ -385,4 +385,39 @@ Autofarm:Cheat(
 		end
 
 	end    
+)
+
+AutoTp:Cheat(
+	"Checkbox", -- Type
+	"СБОР ВСЕГО 2.0", -- Name
+	function(State_all) -- Callback function
+	turnautocollectall = State_all
+	local TweenService = game:GetService("TweenService")
+		local Players = game.Players
+		local Player = Players.LocalPlayer
+		local Character = Player.Character or Player.CharacterAdded:Wait()
+		local HumRoot = Character:WaitForChild("HumanoidRootPart")
+		workspace = game:GetService("Workspace")
+		local Parts = game.Workspace.Tokens.Local
+		local backlog = {}
+		while turnautobones do
+    		Parts.ChildAdded:Connect(function(child)
+        		if child.Name == "Bone" or "Coin" then
+            		table.insert(backlog, child)
+        		end
+    		end)
+    		while true do
+        		local object = backlog[1]
+        		if not object then
+            		Parts.ChildAdded:Wait()
+            		continue
+        		end
+        		goal = {CFrame = object.CFrame}
+        		local tweeninfo = TweenInfo.new(0.1, Enum.EasingStyle.Sine,Enum.EasingDirection.Out, 0, false, 0)
+        		local tween = TweenService:Create(HumRoot, tweeninfo, goal)
+        		tween:Play()
+        		table.remove(backlog, 1)
+        	end
+		end
+	end
 )
