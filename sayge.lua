@@ -45,10 +45,7 @@ AutoTp:Cheat(
         		local tween = TweenService:Create(HumRoot, tweeninfo, goal)
         		tween:Play()
         		table.remove(backlog, 1)
-        		repeat
-            		task.wait(0.01)
-        		until object.Parent == nil
-    		end
+        	end
 		end
 	end
 )
@@ -58,27 +55,34 @@ AutoTp:Cheat(
 	"Auto Abilities", -- Name
 	function(State1) -- Callback function
 		turnautoabilities = State1
+		local TweenService = game:GetService("TweenService")
 		local Players = game.Players
-        local Player = Players.LocalPlayer
-
-        local Character = Player.Character or Player.CharacterAdded:Wait()
-        local HumRoot = Character:WaitForChild("HumanoidRootPart")
-
-        local Parts = game.Workspace.Tokens.Local
-        while turnautoabilities do
-            task.wait(1)		
-           
-            for _, Object in next, Parts:GetChildren() do
-  
-                if Object.Name == "Blue Yummy" or Object.Name == "Gold Yummy" or Object.Name == "Bomb" or Object.Name == "Hasty" or Object.Name == "Lucky Break" or Object.Name == "Dinamite" or Object.Name == "Gold Bomb" or Object.Name == "Blue Bomb" or Object.Name == "Magic Carrot" or Object.Name == "Triple Jump" or Object.Name == "Linking Beam" or Object.Name == "Bones Pumpkin" or Object.Name == "Rage" then
-                    Object.CFrame = HumRoot.CFrame
-                end
-            end
-
-            
-           
-	    end
-	end    
+		local Player = Players.LocalPlayer
+		local Character = Player.Character or Player.CharacterAdded:Wait()
+		local HumRoot = Character:WaitForChild("HumanoidRootPart")
+		workspace = game:GetService("Workspace")
+		local Parts = game.Workspace.Tokens.Local
+		local backlog = {}
+		while turnautoabilities do
+    		Parts.ChildAdded:Connect(function(child)
+        		if child.Name == "Blue Yummy" or child.Name == "Gold Yummy" or child.Name == "Bomb" or child.Name == "Hasty" or child.Name == "Lucky Break" or child.Name == "Dinamite" or child.Name == "Gold Bomb" or child.Name == "Blue Bomb" or child.Name == "Magic Carrot" or child.Name == "Triple Jump" or child.Name == "Linking Beam" or child.Name == "Bones Pumpkin" or child.Name == "Rage" then
+            		table.insert(backlog, child)
+        		end
+    		end)
+    		while true do
+        		local object = backlog[1]
+        		if not object then
+            		Parts.ChildAdded:Wait()
+            		continue
+        		end
+        		goal = {CFrame = object.CFrame}
+        		local tweeninfo = TweenInfo.new(0.1, Enum.EasingStyle.Sine,Enum.EasingDirection.Out, 0, false, 0)
+        		local tween = TweenService:Create(HumRoot, tweeninfo, goal)
+        		tween:Play()
+        		table.remove(backlog, 1)
+        	end
+		end
+	end
 )
 
 AutoTp:Cheat(
@@ -86,27 +90,34 @@ AutoTp:Cheat(
 	"Auto Fruits", -- Name
 	function(State2) -- Callback function
 		turnautofruits = State2
+		local TweenService = game:GetService("TweenService")
 		local Players = game.Players
-        local Player = Players.LocalPlayer
-
-        local Character = Player.Character or Player.CharacterAdded:Wait()
-        local HumRoot = Character:WaitForChild("HumanoidRootPart")
-
-        local Parts = game.Workspace.Tokens.Local
-        while turnautofruits do
-            task.wait(1)		
-             
-            for _, Object in next, Parts:GetChildren() do
-
-                if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
-                    Object.CFrame = HumRoot.CFrame
-                end
-            end
-
-		
-
-	    end
-	end    
+		local Player = Players.LocalPlayer
+		local Character = Player.Character or Player.CharacterAdded:Wait()
+		local HumRoot = Character:WaitForChild("HumanoidRootPart")
+		workspace = game:GetService("Workspace")
+		local Parts = game.Workspace.Tokens.Local
+		local backlog = {}
+		while turnautobones do
+    		Parts.ChildAdded:Connect(function(child)
+        		if Object.Name == "Grape" or Object.Name == "Melon" or Object.Name == "Raspberry" or Object.Name == "Rice" then
+            		table.insert(backlog, child)
+        		end
+    		end)
+    		while true do
+        		local object = backlog[1]
+        		if not object then
+            		Parts.ChildAdded:Wait()
+            		continue
+        		end
+        		goal = {CFrame = object.CFrame}
+        		local tweeninfo = TweenInfo.new(0.1, Enum.EasingStyle.Sine,Enum.EasingDirection.Out, 0, false, 0)
+        		local tween = TweenService:Create(HumRoot, tweeninfo, goal)
+        		tween:Play()
+        		table.remove(backlog, 1)
+        	end
+		end
+	end
 )
 
 Autofarm:Cheat("Slider", "Farm Time", function(farmtime)
