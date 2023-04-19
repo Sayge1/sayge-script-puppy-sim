@@ -452,6 +452,9 @@ AutoTp:Cheat(
         		local tween = TweenService:Create(HumRoot, tweeninfo, goal)
         		tween:Play()
         		table.remove(backlog, 1)
+                        repeat
+                            task.wait(0.01)
+                        until object.Parent == nil
         	end
 		end
 	end
