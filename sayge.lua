@@ -17,7 +17,7 @@ end)
 
 AutoTp:Cheat(
 	"Checkbox", -- Type
-	"Auto Bones", -- Name
+	"Auto Bones (tween)", -- Name
 	function(State) -- Callback function
 		turnautobones = State
 		local TweenService = game:GetService("TweenService")
@@ -30,7 +30,7 @@ AutoTp:Cheat(
 		local backlog = {}
 		while turnautobones do
     		Parts.ChildAdded:Connect(function(child)
-        		if child.Name == "Bone" then
+        		if child.Name == "Bone" or child.Name == "Coin" then
             		table.insert(backlog, child)
         		end
     		end)
@@ -48,6 +48,32 @@ AutoTp:Cheat(
         	end
 		end
 	end
+)
+
+AutoTp:Cheat(
+	"Checkbox", -- Type
+	"Auto Bones", -- Name
+	function(State_bones) -- Callback function
+		turnfarmbones = State_bones
+	    local Players = game.Players
+        local Player = Players.LocalPlayer
+
+        local Character = Player.Character or Player.CharacterAdded:Wait()
+        local HumRoot = Character:WaitForChild("HumanoidRootPart")
+
+        local Parts = game.Workspace.Tokens.Local
+        while turnfarmbones do
+            task.wait(sborvsego1)
+            for _, Object in next, Parts:GetChildren() do
+  
+                if Object.Name == "Bone" or Object.Name == "Coin" then
+                    Object.CFrame = HumRoot.CFrame
+                end
+            end
+		
+
+	    end
+	end    
 )
 
 AutoTp:Cheat(
