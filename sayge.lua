@@ -427,12 +427,13 @@ Autofarm:Cheat(
 		while turnautovase do
     		task.wait(0.5)
 			for _, Object in next, Parts:GetChildren() do
-  	    		HumRoot.CFrame = Object.MainPart.CFrame
-  	    		task.wait(1)
-  	    		fireclickdetector(Object.MainPart.ClickDetector)
-  	    		repeat
-  	        		task.wait(0.5)
-        		until Object.Parent == nil
+  	    		if Object.MainPart ~= nil then
+					HumRoot.CFrame = Object.MainPart.CFrame
+					task.wait(1)
+  	    			fireclickdetector(Object.MainPart.ClickDetector)
+  	    			repeat
+  	        			task.wait(0.5)
+        			until Object.Parent == nil 		
     		end    
 		end
 
